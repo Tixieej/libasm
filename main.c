@@ -14,3 +14,6 @@ int		main(void)
 
 	ft_strcpy();
 }
+
+//https://courses.cs.washington.edu/courses/cse378/10au/sections/Section1_recap.pdf//https://www.felixcloutier.com/x86/
+//https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
