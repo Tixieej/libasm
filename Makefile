@@ -6,13 +6,13 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/18 11:45:43 by rde-vrie      #+#    #+#                  #
-#    Updated: 2020/08/18 13:57:11 by rde-vrie      ########   odam.nl          #
+#    Updated: 2020/08/19 19:18:21 by rixt          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libasm.a
 HEADER = libasm.h
-SRC = ft_strlen.s
+SRC = ft_strlen.s ft_strcpy.s ft_strcmp.s
 OBJ = $(SRC:.s=.o)
 FLAGS = -fmacho64 
 
