@@ -17,9 +17,9 @@ int		main(void)
 
 	char dst[20] = "hallo";
 	ft_strcpy(dst, "doeii");
-	printf("ft_strcpy:\ndst = %s", dst);
+	printf("ft_strcpy:\ndst = %s\n", dst);
 
-	a = ft_strcmp("acb", "abc");
+	a = ft_strcmp("abc", "acb");
 	b = ft_strcmp(s, "februari");
 	printf("ft_strcmp:\na = %i, b = %i\n", a, b);
 }

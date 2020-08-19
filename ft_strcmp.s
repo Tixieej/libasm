@@ -14,24 +14,7 @@ loop:
 	jmp		calc_diff
 
 calc_diff:
-	sub		r11b, byte[rsi+rax]
+	sub		r11b, byte[rsi+rax]		; this line has to change
 	mov		rax, r11
 	ret
 
-;int	strcmp(char *s1, char *s2); return int = s1-s2
-
-;	while (s1[i] == s2[i] && s2[i] != '\0')
-;	{
-;		i++;
-;	}
-;	return (s1[i] - s2[i]);
-
-;als s1[i] = s2[i], spring naar andere cmp
-;als s1[i] != 0, doe i++ en spring terug naar loop
-
-;of 
-
-;als s1[i] != 0, spring naar andere cmp
-; anders: return s1-s2
-;als s1[i] == s2[i], spring terug naar loop
-; anders: return s1-s2
