@@ -55,7 +55,10 @@ int		main(void)
 
 	char *src = "hallo";
 	char *dest;
-	dest = strdup(src);
+	printf("%p, %p\n", src, dest);
+	dest = ft_strdup(src);
+	printf("dest = %s\n", dest);
+	printf("%p, %p\n", src, dest);
 }
 
 //https://courses.cs.washington.edu/courses/cse378/10au/sections/Section1_recap.pdf
