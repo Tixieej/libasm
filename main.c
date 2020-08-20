@@ -2,24 +2,59 @@
 #include <string.h>
 #include <unistd.h> //write
 #include <errno.h> //errno
+#include "libasm.h"
 
-int		ft_strlen(char *);
-char	*ft_strcpy(char *, char *);
-int		ft_strcmp(char *, char *);
-int		ft_write(int, void *, size_t);
-int		ft_read(int, void *, size_t);
-char	*ft_strdup(char *);
-
-int		main(void)
+void	test_strlen(void)
 {
 	int		a;
 	int		b;
-	char	*s = "februari";
-	a = ft_strlen(s);
-	printf("ft_strlen:\ta = %i\n", a);
-	b = ft_strlen("hello");
-	printf("b = %i\n", b);
+	char	*s1;
+	char	*s2;
 
+	s1 = "hello everyone, how are you doing?";
+	s2 = "bye.";
+	
+	printf("-=-=-\tmy ft_strlen\t-=-=-\n");	
+	a = ft_strlen(s1);
+	b = ft_strlen(s2);
+	printf("length of %s is %i\n", s1, a);
+	printf("length of %s is %i\n", s2, b);
+
+	printf("-=-=-\treal strlen\t-=-=-\n");
+	a = strlen(s1);
+	b = strlen(s2);
+	printf("length of %s is %i\n", s1, a);
+	printf("length of %s is %i\n", s2, b);
+}
+
+void	test_strcpy(void)
+{
+
+	printf("-=-=-\tmy ft_strcpy\t-=-=-\n");	
+	printf("-=-=-\treal strcpy\t-=-=-\n");
+}
+
+void	test_strcmp(void)
+{
+
+	printf("-=-=-\tmy ft_strcmp\t-=-=-\n");	
+	printf("-=-=-\treal strcmp\t-=-=-\n");
+}
+
+
+void	test_write(void)
+{
+	
+	printf("-=-=-\tmy ft_write\t-=-=-\n");	
+	printf("-=-=-\treal write\t-=-=-\n");
+}
+
+
+int		main(void)
+{	
+	test_strlen();
+	int a, b;
+	char *s = "februari";
 	char dst[20] = "hallo";
 	ft_strcpy(dst, "doeii");
 	printf("ft_strcpy:\tdst = %s\n", dst);
@@ -59,9 +94,7 @@ int		main(void)
 	dest = ft_strdup(src);
 	printf("dest = %s\n", dest);
 	printf("%p, %p\n", src, dest);
+	char *vla;
+	vla = strdup(src);
+	printf("vla = %s\n", dest);
 }
-
-//https://courses.cs.washington.edu/courses/cse378/10au/sections/Section1_recap.pdf
-//https://www.felixcloutier.com/x86/
-//https://cs.brown.edu/courses/cs033/docs/guides/x64_cheatsheet.pdf
-//https://www.tutorialspoint.com/assembly_programming/assembly_basic_syntax.htm
