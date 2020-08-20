@@ -8,6 +8,7 @@ char	*ft_strcpy(char *, char *);
 int		ft_strcmp(char *, char *);
 int		ft_write(int, void *, size_t);
 int		ft_read(int, void *, size_t);
+char	*ft_strdup(char *);
 
 int		main(void)
 {
@@ -51,6 +52,10 @@ int		main(void)
 	char buf2[8];
 	w = read(1, buf2, 8);
 	printf("%s\nw = %i\n", buf2, w);
+
+	char *src = "hallo";
+	char *dest;
+	dest = strdup(src);
 }
 
 //https://courses.cs.washington.edu/courses/cse378/10au/sections/Section1_recap.pdf
