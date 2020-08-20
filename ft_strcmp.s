@@ -14,7 +14,8 @@ loop:
 	jmp		calc_diff
 
 calc_diff:
-	sub		r11b, byte[rsi+rax]		; this line has to change
+	mov		r12b, byte[rsi+rax]
+	sub		r11, r12			; this line has to change
 	mov		rax, r11
 	ret
 
