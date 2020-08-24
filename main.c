@@ -29,72 +29,103 @@ void	test_strlen(void)
 
 void	test_strcpy(void)
 {
+	char	my_src[20] = "Fantastisch";
+	char	src[20] = "Fantastisch";
+	char	my_dst[20];
+	char	dst[20];
 
-	printf("-=-=-\tmy ft_strcpy\t-=-=-\n");	
+	printf("-=-=-\tmy ft_strcpy\t-=-=-\n");
+	ft_strcpy(my_dst, my_src);
+	printf("src = %s \tdst = %s\n", my_src, my_dst);
+	
 	printf("-=-=-\treal strcpy\t-=-=-\n");
+	strcpy(dst, src);
+	printf("src = %s \tdst = %s\n", src, dst);
 }
 
 void	test_strcmp(void)
 {
+	char	*s1;
+	char	*s2;
+	int		my_i;
+	int		i;
 
-	printf("-=-=-\tmy ft_strcmp\t-=-=-\n");	
+	s1 = "Hallo";
+	s2 = "hallo";
+	printf("-=-=-\tmy ft_strcmp\t-=-=-\n");
+	my_i = ft_strcmp(s1, s2);
+	printf("%i\n", my_i);
+
 	printf("-=-=-\treal strcmp\t-=-=-\n");
+	i = strcmp(s1, s2);
+	printf("%i\n", i);
 }
 
 
 void	test_write(void)
 {
-	
-	printf("-=-=-\tmy ft_write\t-=-=-\n");	
+	int		ret;
+
+	printf("-=-=-\tmy ft_write\t-=-=-\n");
+	ret = ft_write(1, "hello\n", 6);
+	printf("ret = %i\n", ret);
+	ret = ft_write(16, "saus\n", 5);
+	printf("ret = %i\n", ret);
+	printf("errno = %i\n", errno);
+	printf("%s\n", strerror(errno));
+
 	printf("-=-=-\treal write\t-=-=-\n");
+	ret = 0;
+	ret = write(1, "hello\n", 6);
+	printf("ret = %i\n", ret);
+	ret = write(16, "saus\n", 5);
+	printf("ret = %i\n", ret);
+	printf("errno = %i\n", errno);
+	printf("%s\n", strerror(errno));
+	
 }
 
+void	test_read(void)
+{
+	char	buff1[28];
+	char	buff2[28];
+	int		ret;
+
+	printf("-=-=-\tmy ft_read\t-=-=-\n");
+	ret = 0;
+	ret = ft_read(1, buff1, 28);
+	printf("%s\nret = %i\n", buff1, ret);
+
+	printf("-=-=-\treal read\t-=-=-\n");
+	ret = 0;
+	ret = read(1, buff2, 28);
+	printf("%s\nret = %i\n", buff2, ret);
+}
+
+void	test_strdup(void)
+{
+	char *src = "hallo";
+	char *dest;
+	char *dest2;
+	
+	printf("-=-=-\tmy ft_strdup\t-=-=-\n");
+	dest = ft_strdup(src);
+	printf("pointers:\t%p, %p\n", src, dest);
+	printf("dest = %s\n", dest);
+
+	printf("-=-=-\treal strdup\t-=-=-\n");
+	dest2 = strdup(src);
+	printf("pointers:\t%p, %p\n", src, dest2);
+	printf("dest2 = %s\n", dest2);
+}
 
 int		main(void)
 {	
 	test_strlen();
-	int a, b;
-	char *s = "februari";
-	char dst[20] = "hallo";
-	ft_strcpy(dst, "doeii");
-	printf("ft_strcpy:\tdst = %s\n", dst);
-
-	a = ft_strcmp("abc", "acb");
-	b = ft_strcmp(s, "februari");
-	printf("ft_strcmp:\ta = %i, b = %i\n", a, b);
-	a = strcmp("abc", "fiets");
-	char s1[10] = "fiets";
-	char s2[10] = "cba";
-	b = strcmp(s2, s1);
-	printf("echt strcmp:\t%i %i\n", a, b);
-
-	printf("\nft_write:\t");
-	int w;
-	w = ft_write(1, "hello\n", 6);
-	printf("w = %i\n", w);
-	w = ft_write(16, "saus\n", 5);
-	printf("w = %i\n", w);
-	printf("errno = %i\n", errno);
-	printf("%s\n", strerror(errno));
-
-	printf("real read:\n");
-	char buff[8];
-	w = read(1, buff, 8);
-	printf("%s\nw = %i\n", buff, w);
-	
-	w = 0;
-	printf("ft_read:\n");
-	char buf2[8];
-	w = read(1, buf2, 8);
-	printf("%s\nw = %i\n", buf2, w);
-
-	char *src = "hallo";
-	char *dest;
-	printf("%p, %p\n", src, dest);
-	dest = ft_strdup(src);
-	printf("dest = %s\n", dest);
-	printf("%p, %p\n", src, dest);
-	char *vla;
-	vla = strdup(src);
-	printf("vla = %s\n", dest);
+	test_strcpy();
+	test_strcmp();
+	test_write();
+	test_read();
+	test_strdup();
+	return (0);
 }

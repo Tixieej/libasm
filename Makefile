@@ -6,7 +6,7 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/18 11:45:43 by rde-vrie      #+#    #+#                  #
-#    Updated: 2020/08/20 14:44:16 by rde-vrie      ########   odam.nl          #
+#    Updated: 2020/08/24 10:42:38 by rde-vrie      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,6 @@ fclean: clean
 
 re: fclean all
 
-test: $(NAME)
+test: $(NAME) main.c
 	gcc -L. -lasm main.c
 	./a.out
