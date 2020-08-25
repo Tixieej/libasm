@@ -1,8 +1,11 @@
 # libasm
-Codam: Assembly
+<h3>This is a Codam project.</h3>
 
-This project isn't finished yet
+This is an introduction to assembly on macOS. I have written my own version of the following functions in assembly:
 
-Todo:
-- make seperate .c test functions for every .s function
-- add more test cases for every .s function
+- strlen
+- strcpy
+- strcmp
+- write
+- read
+- strdup
